@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+              #pol {
+          width: 100vw; 
+          height: 100vh;
+          background-color: green;
+          position: relative;
+          margin: 0; 
+          overflow: hidden; 
+        }
+      
+        #ball {
+          width: 30px;
+          height: 30px;
+          background-color: white;
+          border-radius: 50%;
+          position: absolute;
+          top: 50%; 
+          left: 50%; 
+          transform: translate(-50%, -50%); 
+          cursor: pointer;
+          transition: top 0.5s, left 0.5s;
+        }
+      
+        .goal {
+          width: 100px;
+          height: 500px;
+          background-color: white;
+          position: absolute;
+        }
+      
+        #gol1 {
+          left: 0;
+          top: 100px;
+        }
+      
+        .goal1 {
+            width: 100px;
+          height: 500px;
+          background-color: white;
+          position: absolute;   
+          right: 0;
+          top: 100px;
+        }
+        
+        #score {
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+        }
+        
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        @keyframes confetti {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(600px) rotate(360deg); }
+}
+
+.confetti {
+    width: 10px;
+    height: 10px;
+    background-color: #ffbf00;
+    position: absolute;
+    top: 0;
+    animation: confetti 2s ease-out infinite;
+}
+
+#score {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    color: #fff;
+}
+
+#reset {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#resetButton:hover {
+    background-color: #45a049;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+#pol {
+    width: 100vw;
+    height: 100vh;
+    background-color: green;
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+}
+</style>
+       <div id="pol">
+        <div id="ball" draggable="true"></div>
+        <div class="ugl1"></div>
+        <div class="ugl2"></div>
+        <div id="gol1" class="goal"></div>
+        <div id="gol2" class="goal1"></div>
+        <div id="score">Score: <span id="team1Score">0</span>-<span id="team2Score">0</span></div>
+        <div id="reset">Reset</div>
+        <div id="confetti"></div>  
+      </div>
+    <script src="./index.js"></script>
+</body>
+</html>
